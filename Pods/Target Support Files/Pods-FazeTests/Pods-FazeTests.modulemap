@@ -1,0 +1,6 @@
+framework module Pods_FazeTests {
+  umbrella header "Pods-FazeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
