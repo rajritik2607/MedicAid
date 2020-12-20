@@ -1,9 +1,5 @@
 //
 //  AppDelegate.swift
-//  Faze
-//
-//  Created by riddhi gupta on 12/12/20.
-//
 
 import UIKit
 import Firebase
