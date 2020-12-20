@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import Firebase
 
 class AddDetailsViewController: UIViewController {
 
@@ -29,7 +31,26 @@ class AddDetailsViewController: UIViewController {
 
     }
     
-
+    
+    
+    @IBAction func signUpPressed(_ sender: UIButton) {
+        
+        guard let genderText = self.sex.text, !genderText.isEmpty else { return}
+        guard let weightText = self.weight.text, !weightText.isEmpty else { return}
+        guard let heightText = self.height.text, !heightText.isEmpty else { return}
+        let values = ["gender": genderText,"weight": weightText, "height": heightText]
+        Database.database().reference().child("users").child("\(Auth.auth().currentUser!.uid)").updateChildValues(values) {
+          (error:Error?, ref:DatabaseReference) in
+          
+            if let error = error {
+            print("Data could not be saved: \(error).")
+          } else {
+            print("Data saved successfully!")
+          }
+        }
+        self.performSegue(withIdentifier: "signuptotab", sender: nil)
+    }
+    
 
 
 }

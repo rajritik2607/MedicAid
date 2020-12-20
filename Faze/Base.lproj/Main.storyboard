@@ -103,7 +103,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
-                                    <segue destination="8Rh-FT-uBf" kind="show" id="2gu-GB-TB1"/>
+                                    <action selector="signUpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8bb-xl-vpy"/>
+                                    <segue destination="8Rh-FT-uBf" kind="show" identifier="signuptosignup" id="2gu-GB-TB1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,6 +153,7 @@
                                 <rect key="frame" x="20" y="445" width="175" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="loginPressed:" destination="Ce0-21-OR6" eventType="touchUpInside" id="oHk-CS-XDY"/>
                                     <segue destination="skQ-mk-jQ6" kind="show" id="q6Y-tI-LxK"/>
                                 </connections>
                             </button>
@@ -161,6 +163,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VmC-nf-T2H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Ce0-21-OR6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1623" y="50"/>
         </scene>
@@ -314,6 +317,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+                                    <action selector="loginPressed:" destination="skQ-mk-jQ6" eventType="touchUpInside" id="rV9-vq-TUc"/>
                                     <segue destination="wa4-R1-PyW" kind="show" id="Cy8-qo-uWP"/>
                                 </connections>
                             </button>
@@ -384,13 +388,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uvq-Em-Czw">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your height in cm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uvq-Em-Czw">
                                 <rect key="frame" x="28" y="230" width="351" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="example : My Son" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GSe-MJ-UJe">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your weight in Kg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GSe-MJ-UJe">
                                 <rect key="frame" x="28" y="337" width="351" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -401,7 +405,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get Started"/>
                                 <connections>
-                                    <segue destination="wa4-R1-PyW" kind="show" id="hhN-aX-VFW"/>
+                                    <action selector="signUpPressed:" destination="8Rh-FT-uBf" eventType="touchUpInside" id="3CP-QA-nmY"/>
+                                    <segue destination="wa4-R1-PyW" kind="show" identifier="signuptotab" id="hhN-aX-VFW"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Your gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="biE-eS-okN">
@@ -591,9 +596,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="v0O-sk-KUl"/>
-        <segue reference="q6Y-tI-LxK"/>
-        <segue reference="gkS-Li-ZGL"/>
+        <segue reference="hhN-aX-VFW"/>
+        <segue reference="ITo-NP-d9l"/>
+        <segue reference="HNH-q6-FRf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home1-2" width="375" height="812"/>

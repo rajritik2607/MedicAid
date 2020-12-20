@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
+import Firebase
+
 
 class SignUpViewController: UIViewController {
+    
+    var ref : DatabaseReference!
 
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var details2: UILabel!
@@ -24,7 +30,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         
         
-    
+        ref = Database.database().reference()
         name.setTextField()
         password.setTextField()
         confirmPassword.setTextField()
@@ -39,11 +45,63 @@ class SignUpViewController: UIViewController {
         
     }
     
-      
-     
+    @IBAction func signUpPressed(_ sender: UIButton) {
+        
+        if password.text != confirmPassword.text {
+                          let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
+                          let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                          
+                          alertController.addAction(defaultAction)
+                          self.present(alertController, animated: true, completion: nil)
+                      
+        }
+        else{
+            
+       signIn()
+        }
+    }
+    
+    func signIn() {
+        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (authResult, error) in
+            if error == nil {
+                guard let nameText = self.name.text, !nameText.isEmpty else { return}
+                guard let emailText = self.email.text, !emailText.isEmpty else { return}
+                guard let passwordText = self.password.text, !passwordText.isEmpty else { return}
+                let values = ["name": nameText, "email": emailText, "password": passwordText]
+             Database.database().reference().child("users").child("\(Auth.auth().currentUser!.uid)").updateChildValues(values) {
+              (error:Error?, ref:DatabaseReference) in
+              
+                if let error = error {
+                print("Data could not be saved: \(error).")
+              } else {
+                print("Data saved successfully!")
+              }
+            }
+            self.performSegue(withIdentifier: "signuptosignup", sender: self)
+        }
+            else{
+                                      let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                                      let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                                      
+                                      alertController.addAction(defaultAction)
+                                      self.present(alertController, animated: true, completion: nil)
+                                 
+                                   
+                               
+                               
+                               
+                               
+                       }
+        }
+    }
+    
+   
+    
     
 
 }
+
+
 
 extension UITextField {
     func setTextField() {
