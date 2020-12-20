@@ -19,6 +19,10 @@ class AddDetailsViewController: UIViewController {
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var height: UITextField!
     @IBOutlet weak var addPerson: UIButton!
+    
+    @IBOutlet var gender: UITextField!
+    @IBOutlet var age: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addPerson.applyDesign()
@@ -28,6 +32,8 @@ class AddDetailsViewController: UIViewController {
         sex.textColor = labelcolour
         height.setTextField()
         weight.setTextField()
+        gender.setTextField()
+        age.setTextField()
 
     }
     
@@ -35,10 +41,11 @@ class AddDetailsViewController: UIViewController {
     
     @IBAction func signUpPressed(_ sender: UIButton) {
         
-        guard let genderText = self.sex.text, !genderText.isEmpty else { return}
+        guard let genderText = self.gender.text, !genderText.isEmpty else { return}
         guard let weightText = self.weight.text, !weightText.isEmpty else { return}
         guard let heightText = self.height.text, !heightText.isEmpty else { return}
-        let values = ["gender": genderText,"weight": weightText, "height": heightText]
+        guard let ageText = self.age.text, !ageText.isEmpty else { return}
+        let values = ["gender": genderText,"weight": weightText, "height": heightText,"age": ageText]
         Database.database().reference().child("users").child("\(Auth.auth().currentUser!.uid)").updateChildValues(values) {
           (error:Error?, ref:DatabaseReference) in
           

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		04DB69CE102414C1EE4FFB50 /* Pods_Faze_FazeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F75D51953BC3C42D0504DAF6 /* Pods_Faze_FazeUITests.framework */; };
 		6441D5A7258EE61A005660E1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6441D5A6258EE61A005660E1 /* GoogleService-Info.plist */; };
+		6441D5AF258EE77B005660E1 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441D5AE258EE77B005660E1 /* TestViewController.swift */; };
+		6441D5B4258EE86A005660E1 /* final_covid_model.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 6441D5B3258EE86A005660E1 /* final_covid_model.mlmodel */; };
+		6441D5B9258EE8BE005660E1 /* normalQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441D5B8258EE8BE005660E1 /* normalQuestion.swift */; };
+		6441D5BE258EE8FA005660E1 /* normalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441D5BD258EE8FA005660E1 /* normalTest.swift */; };
+		6441D5C3258EF5A8005660E1 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6441D5C2258EF5A8005660E1 /* ReportViewController.swift */; };
 		64D46988A7A1C24FA16C5405 /* Pods_Faze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85217EB815CDCE811478D524 /* Pods_Faze.framework */; };
 		88781834E92F5776B69EC2F4 /* Pods_FazeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B3E61BF8B95B36F99040985 /* Pods_FazeTests.framework */; };
 		FD1F1872258E94DA003F5A4E /* colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1F1871258E94D9003F5A4E /* colour.swift */; };
@@ -49,6 +54,11 @@
 		0BB62CC7985E094D8ACC3B3D /* Pods-FazeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FazeTests.release.xcconfig"; path = "Target Support Files/Pods-FazeTests/Pods-FazeTests.release.xcconfig"; sourceTree = "<group>"; };
 		0F3B907844A2A384C895C774 /* Pods-Faze-FazeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Faze-FazeUITests.release.xcconfig"; path = "Target Support Files/Pods-Faze-FazeUITests/Pods-Faze-FazeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6441D5A6258EE61A005660E1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6441D5AE258EE77B005660E1 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		6441D5B3258EE86A005660E1 /* final_covid_model.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = final_covid_model.mlmodel; sourceTree = "<group>"; };
+		6441D5B8258EE8BE005660E1 /* normalQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normalQuestion.swift; sourceTree = "<group>"; };
+		6441D5BD258EE8FA005660E1 /* normalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normalTest.swift; sourceTree = "<group>"; };
+		6441D5C2258EF5A8005660E1 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		85217EB815CDCE811478D524 /* Pods_Faze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Faze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B3E61BF8B95B36F99040985 /* Pods_FazeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FazeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EA2AC046262EC6A37C7069 /* Pods-Faze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Faze.debug.xcconfig"; path = "Target Support Files/Pods-Faze/Pods-Faze.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,12 +174,17 @@
 				FD1F188E258EBD48003F5A4E /* StartTestViewController.swift */,
 				FD63F38C25850F3200682EAE /* HomeViewController.swift */,
 				FD1F1876258E97D2003F5A4E /* HomeCollectionViewCell.swift */,
+				6441D5B8258EE8BE005660E1 /* normalQuestion.swift */,
+				6441D5BD258EE8FA005660E1 /* normalTest.swift */,
+				6441D5AE258EE77B005660E1 /* TestViewController.swift */,
+				6441D5C2258EF5A8005660E1 /* ReportViewController.swift */,
 				FD1F1886258EB73E003F5A4E /* HomeTableViewCell.swift */,
 				FD63F32D2584D2BC00682EAE /* Main.storyboard */,
 				FD63F3302584D2C000682EAE /* Assets.xcassets */,
 				FD63F3322584D2C000682EAE /* LaunchScreen.storyboard */,
 				FD63F3352584D2C000682EAE /* Info.plist */,
 				6441D5A6258EE61A005660E1 /* GoogleService-Info.plist */,
+				6441D5B3258EE86A005660E1 /* final_covid_model.mlmodel */,
 			);
 			path = Faze;
 			sourceTree = "<group>";
@@ -431,16 +446,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6441D5B9258EE8BE005660E1 /* normalQuestion.swift in Sources */,
 				FD1F1882258EAB4A003F5A4E /* LoginViewController.swift in Sources */,
 				FD1F188F258EBD48003F5A4E /* StartTestViewController.swift in Sources */,
+				6441D5AF258EE77B005660E1 /* TestViewController.swift in Sources */,
 				FD63F380258507CD00682EAE /* AddDetailsViewController.swift in Sources */,
 				FD63F3852585089A00682EAE /* SignUpViewController.swift in Sources */,
+				6441D5BE258EE8FA005660E1 /* normalTest.swift in Sources */,
 				FD63F38D25850F3200682EAE /* HomeViewController.swift in Sources */,
+				6441D5C3258EF5A8005660E1 /* ReportViewController.swift in Sources */,
 				FD1F1877258E97D2003F5A4E /* HomeCollectionViewCell.swift in Sources */,
 				FD1F1887258EB73E003F5A4E /* HomeTableViewCell.swift in Sources */,
 				FD63F3282584D2BC00682EAE /* AppDelegate.swift in Sources */,
 				FD1F1872258E94DA003F5A4E /* colour.swift in Sources */,
 				FD63F32A2584D2BC00682EAE /* SceneDelegate.swift in Sources */,
+				6441D5B4258EE86A005660E1 /* final_covid_model.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
